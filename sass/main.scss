@@ -1,0 +1,128 @@
+@import "config";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  // padding: 0;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-image: url("https://www.scififantasyhorror.co.uk/wp-content/uploads/2015/07/the-digital-art-of-sviatoslav-gerasimchuk-11.jpg");
+  height: 100vh;
+  overflow: hidden;
+  color: $clr-light;
+  position: relative;
+  font-family: $font-stack;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+.weather {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+  font-weight: $fw-normal;
+
+  .main-title {
+    font-size: $fs-h1;
+    font-weight: $fw-normal;
+    text-transform: uppercase;
+    color: $clr-accent;
+    letter-spacing: 2px;
+    grid-column: 1/-1;
+  }
+
+  .section-date {
+    grid-column: 1/2;
+  }
+
+  .section-temp {
+    --border: solid 0.25rem $clr-accent;
+    grid-column: 2/3;
+    border-left: var(--border);
+    border-right: var(--border);
+  }
+
+  .section-wind {
+    grid-column: 3/4;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-self: start;
+    grid-template-rows: min-content 1fr;
+
+    .title,
+    .reading {
+      grid-template-columns: 2/3;
+    }
+
+    .wind-direction {
+      --size: 6rem;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      display: grid;
+      place-items: center;
+      grid-row: 1 / span 2;
+    }
+
+    .wind-arrow {
+      --direction: 180deg;
+      --size: 0.8rem;
+      height: calc(var(--size) * 3);
+      width: var(--size);
+      background: $clr-dark;
+      clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+      transform: translateY(-50%);
+      rotate: var(--direction);
+      transform-origin: bottom/center;
+    }
+  }
+
+  .info {
+    grid-column: 1/-1;
+  }
+
+  .title {
+    font-size: $fs-h1;
+    font-weight: $fw-bold;
+  }
+
+  .reading {
+    font-size: $fs-h2;
+    color: $clr-dark;
+  }
+}
+
+.section-date {
+  .title {
+    font-size: $fs-xl;
+  }
+  .date {
+    font-size: $fs-h1;
+    font-weight: $fw-light;
+  }
+}

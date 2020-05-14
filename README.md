@@ -9,4 +9,5 @@ Used Techhnologies:
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## Screenshot
 ![Project Demo](https://github.com/rizwan2000rm/Mars-Weather-App/blob/master/Screenshot_20200514_171043.png)

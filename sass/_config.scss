@@ -1,42 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap");
+
 // Font-Size
-$fs-h1: 2.25rem;
-$fs-h2: 1.5rem;
-$fs-body: 1rem;
-$fs-xl: 4rem;
-
-// Font-Weight
-$fw-light: 100;
-$fw-normal: 400;
-$fw-bold: 700;
-
-// Fonts
-$font-stack: "Poppins", sans-serif;
-
-// Colors
-$clr-light: #fff;
-$clr-dark: #444;
-$clr-accent: #613131;
+$font: (2, 3, 4, 6);
+@each $fontsize in $font {
+  .fs-#{$fontsize} {
+    font-size: #{$fontsize}rem;
+  }
+}
 
 // Margins
 $spaceamounts: (1, 2, 3, 4, 5);
 
 @each $space in $spaceamounts {
-  .m-#{$space} {
-    margin: #{$space}rem;
-  }
   .my-#{$space} {
-    margin: #{$space}rem 0;
+    margin: #{$space}em 0;
   }
-  .mx-#{$space} {
-    margin: 0 #{$space}rem;
+  .mb-#{$space} {
+    margin-bottom: #{$space}em;
+  }
+  .mt-#{$space} {
+    margin-top: #{$space}em;
   }
   .p-#{$space} {
-    padding: #{$space}rem;
-  }
-  .py-#{$space} {
-    padding: #{$space}rem 0;
-  }
-  .px-#{$space} {
-    padding: 0 #{$space}rem;
+    padding: #{$space}em;
   }
 }
